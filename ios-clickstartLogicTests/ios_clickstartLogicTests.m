@@ -41,7 +41,8 @@
     STAssertNotNil([client stringHttpGetContentsAtURL:@"http://www.google.com"], @"We can reach google");
 }
 
-- (void) testParsingJSON {
+- (void) testParsingJSON
+{
     CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
     NSDictionary *res = [client parseJSON:@"{\"hello\":\"world\"}"];
     STAssertNotNil(res, @"we get a dictionary");
@@ -50,13 +51,15 @@
     STAssertNil([client parseJSON:nil], @"should handle nil");
 }
 
-- (void) testMakeUrl {
+- (void) testMakeUrl
+{
     CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
     STAssertEqualObjects(@"base/path", [client makeURL:@"base" withPath:@"path"], @"Check path");
 }
 
 
-- (void) testRestaurantList {
+- (void) testRestaurantList
+{
     NSString *json = @"[{\"id\":1,\"name\":\"Sumika\",\"website\":\"http://sumikagrill.com/\",\"url\":\"/restaurants/1\"}]";
     CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
     NSArray *ls = [client parseJSONList:json];
@@ -69,5 +72,6 @@
     STAssertEqualObjects([record valueForKey:@"name"], @"Sumika", @"restaurant name");
  
 }
+
 
 @end
