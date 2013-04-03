@@ -2,6 +2,7 @@
 #import "CBNetworkClient.h"
 
 @interface CBViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *webBrowser;
 @property (weak, nonatomic) IBOutlet UIPickerView *restaurantList;
 
 @end
@@ -19,14 +20,21 @@ static NSString *const HOST = @"http://localhost:8080";
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     self.restaurantList.dataSource = self;
     self.restaurantList.delegate = self;
-    
     [self loadInitialRestaurants];
+
+}
+
+- (void) loadWebView:(NSString *)urlAddress {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSURL *url = [NSURL URLWithString:urlAddress];
+        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self webBrowser] loadRequest:requestObj];
+        });
+    });
     
-    //[[self restaurantList] reloadAllComponents];
 }
 
 
@@ -44,6 +52,12 @@ static NSString *const HOST = @"http://localhost:8080";
             }
         });
     });
+}
+
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSString *website = [[restaurants objectAtIndex:row] valueForKey:@"website"];
+    [self loadWebView:website];
 }
 
 
