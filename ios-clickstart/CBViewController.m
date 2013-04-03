@@ -9,7 +9,7 @@
 @implementation CBViewController
 
 
-NSMutableArray *arrayColors;
+NSArray *restaurants;
 
 //TODO: UPDATE ME TO YOUR REAL APP!
 static NSString *const HOST = @"http://localhost:8080";
@@ -20,17 +20,11 @@ static NSString *const HOST = @"http://localhost:8080";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    arrayColors = [[NSMutableArray alloc] init];
-    [arrayColors addObject:@"Red"];
-    [arrayColors addObject:@"Orange"];
-    [arrayColors addObject:@"Yellow"];
-    [arrayColors addObject:@"Green"];
-    [arrayColors addObject:@"Blue"];
-    [arrayColors addObject:@"Indigo"];
-    [arrayColors addObject:@"Violet"];
     
     self.restaurantList.dataSource = self;
     self.restaurantList.delegate = self;
+    
+    [self loadInitialRestaurants];
     
     //[[self restaurantList] reloadAllComponents];
 }
@@ -42,7 +36,11 @@ static NSString *const HOST = @"http://localhost:8080";
         NSArray *data = [client listRestaurants:HOST];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (data != nil) {
-                
+                restaurants = data;
+                [[self restaurantList] reloadAllComponents];
+            } else {
+                [self showMessage:@"Unable to contact server"
+                          message:@"You may need to correct the server address in the code (or start it up!)"];
             }
         });
     });
@@ -55,11 +53,11 @@ static NSString *const HOST = @"http://localhost:8080";
 
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return [arrayColors count];
+    return [restaurants count];
 }
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [arrayColors objectAtIndex:row];
+    return [[restaurants objectAtIndex:row] valueForKey:@"name"];
 }
 
 
