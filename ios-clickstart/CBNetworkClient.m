@@ -21,21 +21,32 @@
     return [self parseJSON:data];
 }
 
-- (NSDictionary *) listRestaurants:(NSString *)host {
-    NSString *url = [self makeURL: host withPath:@"restaurants"];
-    NSString *data = [self stringHttpGetContentsAtURL:url];
-    return [self parseJSON:data];    
+- (NSArray *) listRestaurants:(NSString *)host {
+    NSString *data = [self stringHttpGetContentsAtURL:[self makeURL: host withPath:@"restaurants"]];
+    return [self parseJSONList:data];
 }
 
 
-- (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host {
-    
+- (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host {    
     NSString *path = [@"store/" stringByAppendingString:[doc stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSString *data = [self stringHttpGetContentsAtURL:[self makeURL:host withPath:path]];
     return [self parseJSON:data] != nil;
 }
 
 
+
+
+- (NSArray *) parseJSONList:(NSString *)responseString {
+    if (responseString == nil) return nil;
+    NSData* data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if([object isKindOfClass:[NSArray class]]) {
+        return (NSArray *) object;
+    } else {
+        return nil;
+    }
+}
 
 
 

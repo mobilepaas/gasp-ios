@@ -12,7 +12,7 @@
 NSMutableArray *arrayColors;
 
 //TODO: UPDATE ME TO YOUR REAL APP!
-static NSString *const HOST = @"http://localhost:9000/api";
+static NSString *const HOST = @"http://localhost:8080";
 
 /*
  * Initialise the view on loading.
@@ -33,6 +33,19 @@ static NSString *const HOST = @"http://localhost:9000/api";
     self.restaurantList.delegate = self;
     
     //[[self restaurantList] reloadAllComponents];
+}
+
+
+- (void)loadInitialRestaurants {    
+    CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSArray *data = [client listRestaurants:HOST];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (data != nil) {
+                
+            }
+        });
+    });
 }
 
 

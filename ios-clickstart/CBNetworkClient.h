@@ -12,6 +12,8 @@
 
 - (NSString *) stringHttpGetContentsAtURL:(NSString *)url;
 - (NSDictionary *) parseJSON:(NSString *)responseString;
+- (NSArray *) parseJSONList:(NSString *)responseString;
+- (NSArray *) listRestaurants:(NSString *)host;
 - (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)url;
 - (NSString *) makeURL:(NSString *)url withPath:(NSString *)path;
 - (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host;

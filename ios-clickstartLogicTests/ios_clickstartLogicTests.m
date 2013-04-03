@@ -55,4 +55,19 @@
     STAssertEqualObjects(@"base/path", [client makeURL:@"base" withPath:@"path"], @"Check path");
 }
 
+
+- (void) testRestaurantList {
+    NSString *json = @"[{\"id\":1,\"name\":\"Sumika\",\"website\":\"http://sumikagrill.com/\",\"url\":\"/restaurants/1\"}]";
+    CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
+    NSArray *ls = [client parseJSONList:json];
+    STAssertNotNil(ls, @"should have one");
+ 
+    
+    STAssertNotNil([ls objectAtIndex:0], @"Should have something at least");
+    STAssertTrue([[ls objectAtIndex:0] isKindOfClass:[NSDictionary class]], @"Should contain an NSDictionary");
+    NSDictionary *record = [ls objectAtIndex:0];
+    STAssertEqualObjects([record valueForKey:@"name"], @"Sumika", @"restaurant name");
+ 
+}
+
 @end
