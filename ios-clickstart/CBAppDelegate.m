@@ -28,33 +28,43 @@
 }
 
 
+
+
 /*
- * respond to the call back, and tell the CloudBees push server about this device - this is called when installed.
+ * respond to the call back, and tell the CloudBees push server about this device - this is called when installed on a phone - only
+ * one time!
  */
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     NSLog(@"My token is: %@", deviceToken);
-    NSString* token = [NSString stringWithUTF8String:[deviceToken bytes]];
-    [CBViewController registerWithPushServer:token];
+    NSString* tokenAsString = [[[deviceToken description]
+                                 stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]]
+                                stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [CBViewController registerWithPushServer:tokenAsString];
 
 }
 
-- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
-{
-	NSLog(@"Failed to get token, error: %@", error);
-}
 
 
-/* When we get a push message - which came via the push app and SNS, this will be called */
+
+/* 
+ * When we get a push message - which came via the push app and SNS, this will be called 
+ */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-
     for (id key in userInfo) {
         NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
     }
     [CBViewController showMessage:@"New Restaurant" message:@"We have a new bit of data!"];
 }
 
+
+
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
+}
 
 
 

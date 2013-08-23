@@ -29,6 +29,9 @@ static NSString *const PUSH_SERVER = @"http://gasp-push-server.partnerdemo.cloud
 
 }
 
+/*
+ * Show a web view of the selected restaurant
+ */
 - (void) loadWebView:(NSString *)urlAddress {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSURL *url = [NSURL URLWithString:urlAddress];
@@ -40,6 +43,10 @@ static NSString *const PUSH_SERVER = @"http://gasp-push-server.partnerdemo.cloud
     
 }
 
+
+/*
+ * Called to tell cloudbees about this mobile app instance
+ */
 + (void) registerWithPushServer:(NSString *)token {
     CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -95,7 +102,9 @@ static NSString *const PUSH_SERVER = @"http://gasp-push-server.partnerdemo.cloud
 
 
 
-
+/*
+ * Simple message popup
+ */
 + (void) showMessage:(NSString *)heading message:(NSString *)message {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:heading
                                                     message:message
