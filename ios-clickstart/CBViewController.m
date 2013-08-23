@@ -13,7 +13,7 @@
 NSArray *restaurants;
 
 //TODO: UPDATE ME TO YOUR REAL APP!
-static NSString *const HOST = @"http://localhost:8080";
+static NSString *const HOST = @"http://gasp.partnerdemo.cloudbees.net";
 
 /*
  * Initialise the view on loading.
