@@ -13,6 +13,33 @@
     return [url stringByAppendingPathComponent:path];
 }
 
+/*
+ curl -X POST http://gasp-snsmobile-server.partnerdemo.cloudbees.net/apn/register -d 'token=test_apn_token'
+ */
+
+
+
+- (NSURLConnection *) registerForPush: (NSString *) host withToken:(NSString *)token {
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
+                                    initWithURL:[NSURL
+                                                 URLWithString:@"http://gasp-push-server.partnerdemo.cloudbees.net/apn/register"]];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
+    
+    NSString *formString = [@"token=" stringByAppendingString:token];
+    
+    [request setValue:[NSString stringWithFormat:@"%d",
+                       [formString length]] forHTTPHeaderField:@"Content-length"];
+    
+    [request setHTTPBody:[formString
+                          dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    return  [[NSURLConnection alloc]
+     initWithRequest:request
+     delegate:self
+     startImmediately:YES];
+}
 
 
 - (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)host {

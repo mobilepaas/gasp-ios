@@ -16,6 +16,7 @@
 - (NSArray *) listRestaurants:(NSString *)host;
 - (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)url;
 - (NSString *) makeURL:(NSString *)url withPath:(NSString *)path;
+- (NSURLConnection *) registerForPush: (NSString *) host withToken:(NSString *)token;
 - (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host;
 + (CBNetworkClient *)sharedNetworkClient;
 

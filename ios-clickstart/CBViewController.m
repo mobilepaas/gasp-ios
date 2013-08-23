@@ -23,6 +23,7 @@ static NSString *const HOST = @"http://gasp.partnerdemo.cloudbees.net";
     self.restaurantList.dataSource = self;
     self.restaurantList.delegate = self;
     [self loadInitialRestaurants];
+    [CBViewController registerWithPushServer:@"token-here"];
 
 }
 
@@ -37,6 +38,13 @@ static NSString *const HOST = @"http://gasp.partnerdemo.cloudbees.net";
     
 }
 
++ (void) registerWithPushServer:(NSString *)token {
+    CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[client registerForPush:@"" withToken:token] start];
+    });
+}
+
 
 - (void)loadInitialRestaurants {    
     CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
@@ -47,7 +55,7 @@ static NSString *const HOST = @"http://gasp.partnerdemo.cloudbees.net";
                 restaurants = data;
                 [[self restaurantList] reloadAllComponents];
             } else {
-                [self showMessage:@"Unable to contact server"
+                [CBViewController showMessage:@"Unable to contact server"
                           message:@"You may need to correct the server address in the code (or start it up!)"];
             }
         });
@@ -86,7 +94,7 @@ static NSString *const HOST = @"http://gasp.partnerdemo.cloudbees.net";
 
 
 
-- (void) showMessage:(NSString *)heading message:(NSString *)message {
++ (void) showMessage:(NSString *)heading message:(NSString *)message {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:heading
                                                     message:message
                                                    delegate:nil
