@@ -14,6 +14,7 @@ NSArray *restaurants;
 
 //TODO: UPDATE ME TO YOUR REAL APP!
 static NSString *const HOST = @"http://gasp.partnerdemo.cloudbees.net";
+static NSString *const PUSH_SERVER = @"http://gasp-push-server.partnerdemo.cloudbees.net/apn/register";
 
 /*
  * Initialise the view on loading.
@@ -23,7 +24,8 @@ static NSString *const HOST = @"http://gasp.partnerdemo.cloudbees.net";
     self.restaurantList.dataSource = self;
     self.restaurantList.delegate = self;
     [self loadInitialRestaurants];
-    [CBViewController registerWithPushServer:@"token-here"];
+    //For hard coded testing of registering with the push server
+    //[CBViewController registerWithPushServer:@"token-here"];
 
 }
 
@@ -41,7 +43,7 @@ static NSString *const HOST = @"http://gasp.partnerdemo.cloudbees.net";
 + (void) registerWithPushServer:(NSString *)token {
     CBNetworkClient *client = [CBNetworkClient sharedNetworkClient];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[client registerForPush:@"" withToken:token] start];
+        [[client registerForPush:PUSH_SERVER withToken:token] start];
     });
 }
 

@@ -13,16 +13,14 @@
     return [url stringByAppendingPathComponent:path];
 }
 
-/*
- curl -X POST http://gasp-snsmobile-server.partnerdemo.cloudbees.net/apn/register -d 'token=test_apn_token'
+
+/* 
+ * Talk to the cloudbees push server - tell it that we want to be pushed to - when there is new data.
  */
-
-
-
 - (NSURLConnection *) registerForPush: (NSString *) host withToken:(NSString *)token {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                     initWithURL:[NSURL
-                                                 URLWithString:@"http://gasp-push-server.partnerdemo.cloudbees.net/apn/register"]];
+                                                 URLWithString:host]];
     
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-type"];
