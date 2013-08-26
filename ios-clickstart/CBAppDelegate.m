@@ -55,7 +55,7 @@
     for (id key in userInfo) {
         NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
     }
-    [CBViewController showMessage:@"New Restaurant" message:@"We have a new bit of data!"];
+    [CBViewController showMessage:@"Gasp!" message:@"We have news for you..."];
 }
 
 

@@ -65,7 +65,7 @@ static NSString *const PUSH_SERVER = @"http://gasp-push-server.partnerdemo.cloud
                 [[self restaurantList] reloadAllComponents];
             } else {
                 [CBViewController showMessage:@"Unable to contact server"
-                          message:@"You may need to correct the server address in the code (or start it up!)"];
+                          message:@"Please check the address of the Gasp! server"];
             }
         });
     });
