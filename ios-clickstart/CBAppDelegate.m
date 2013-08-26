@@ -9,7 +9,7 @@
   // Override point for customization after application launch.
    
   // TestFlight SDK integration
-  [TestFlight takeOff:@"3b3540c6-1839-4e43-85c7-b54fac7e4b09"];
+  //[TestFlight takeOff:@"3b3540c6-1839-4e43-85c7-b54fac7e4b09"];
     
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
