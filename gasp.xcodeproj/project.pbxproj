@@ -37,6 +37,7 @@
 		4F16788117CBE91D00BAD7A9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F16788017CBE91D00BAD7A9 /* Icon@2x.png */; };
 		4F16788317CBE93700BAD7A9 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F16788217CBE93700BAD7A9 /* Icon-72.png */; };
 		4F16788517CBE93D00BAD7A9 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F16788417CBE93D00BAD7A9 /* Icon-72@2x.png */; };
+		4F16788717CBEC3300BAD7A9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F16788617CBEC3300BAD7A9 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		4F16788017CBE91D00BAD7A9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		4F16788217CBE93700BAD7A9 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		4F16788417CBE93D00BAD7A9 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		4F16788617CBEC3300BAD7A9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		0EF3E71616E8603E002F2A96 = {
 			isa = PBXGroup;
 			children = (
+				4F16788617CBEC3300BAD7A9 /* Default-568h@2x.png */,
 				4F16788417CBE93D00BAD7A9 /* Icon-72@2x.png */,
 				4F16788217CBE93700BAD7A9 /* Icon-72.png */,
 				4F16788017CBE91D00BAD7A9 /* Icon@2x.png */,
@@ -297,6 +300,7 @@
 				4F16788117CBE91D00BAD7A9 /* Icon@2x.png in Resources */,
 				4F16788317CBE93700BAD7A9 /* Icon-72.png in Resources */,
 				4F16788517CBE93D00BAD7A9 /* Icon-72@2x.png in Resources */,
+				4F16788717CBEC3300BAD7A9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
