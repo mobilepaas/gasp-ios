@@ -1,11 +1,17 @@
 #import "CBAppDelegate.h"
 #import "CBViewController.h"
 
+#import "TestFlight.h"
+
 @implementation CBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
+   
+  // TestFlight SDK integration
+  [TestFlight takeOff:@"3b3540c6-1839-4e43-85c7-b54fac7e4b09"];
+    
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
     self.viewController = [[CBViewController alloc] initWithNibName:@"CBViewController_iPhone" bundle:nil];
   } else {
