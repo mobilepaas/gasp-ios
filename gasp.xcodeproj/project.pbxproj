@@ -93,13 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E220C0416EDD281004AF57B /* ios-clickstartLogicTests */ = {
+		0E220C0416EDD281004AF57B /* gasp-clickstartLogicTests */ = {
 			isa = PBXGroup;
 			children = (
 				0E220C0A16EDD281004AF57B /* ios_clickstartLogicTests.h */,
 				0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */,
 				0E220C0516EDD281004AF57B /* Supporting Files */,
 			);
+			name = "gasp-clickstartLogicTests";
 			path = "ios-clickstartLogicTests";
 			sourceTree = "<group>";
 		};
@@ -116,8 +117,8 @@
 		0EF3E71616E8603E002F2A96 = {
 			isa = PBXGroup;
 			children = (
-				0EF3E72816E8603E002F2A96 /* ios-clickstart */,
-				0E220C0416EDD281004AF57B /* ios-clickstartLogicTests */,
+				0EF3E72816E8603E002F2A96 /* gasp-clickstart */,
+				0E220C0416EDD281004AF57B /* gasp-clickstartLogicTests */,
 				0EF3E72116E8603E002F2A96 /* Frameworks */,
 				0EF3E72016E8603E002F2A96 /* Products */,
 			);
@@ -143,7 +144,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0EF3E72816E8603E002F2A96 /* ios-clickstart */ = {
+		0EF3E72816E8603E002F2A96 /* gasp-clickstart */ = {
 			isa = PBXGroup;
 			children = (
 				0EF3E73116E8603E002F2A96 /* CBAppDelegate.h */,
@@ -156,6 +157,7 @@
 				0EC0776F16F2F897001F32E5 /* CBNetworkClient.h */,
 				0EC0777016F2F897001F32E5 /* CBNetworkClient.m */,
 			);
+			name = "gasp-clickstart";
 			path = "ios-clickstart";
 			sourceTree = "<group>";
 		};
