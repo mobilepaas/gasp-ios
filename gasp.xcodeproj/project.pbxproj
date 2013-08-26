@@ -42,6 +42,8 @@
 		4F1678A417CBF66800BAD7A9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4F16789E17CBF66800BAD7A9 /* README.md */; };
 		4F1678A517CBF66800BAD7A9 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 4F16789F17CBF66800BAD7A9 /* release_notes.md */; };
 		4F1678A717CBF72F00BAD7A9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1678A617CBF72F00BAD7A9 /* libz.dylib */; };
+		4F1678A917CC0F4400BAD7A9 /* gasp_mikado@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1678A817CC0F4400BAD7A9 /* gasp_mikado@2x.png */; };
+		4F1678AB17CC0F7500BAD7A9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1678AA17CC0F7500BAD7A9 /* Default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		4F1678A117CBF66800BAD7A9 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		4F1678A217CBF66800BAD7A9 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		4F1678A617CBF72F00BAD7A9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		4F1678A817CC0F4400BAD7A9 /* gasp_mikado@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gasp_mikado@2x.png"; path = "../gasp_mikado@2x.png"; sourceTree = "<group>"; };
+		4F1678AA17CC0F7500BAD7A9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,7 @@
 		0EF3E71616E8603E002F2A96 = {
 			isa = PBXGroup;
 			children = (
+				4F1678AA17CC0F7500BAD7A9 /* Default.png */,
 				4F1678A617CBF72F00BAD7A9 /* libz.dylib */,
 				4F16788617CBEC3300BAD7A9 /* Default-568h@2x.png */,
 				4F16788417CBE93D00BAD7A9 /* Icon-72@2x.png */,
@@ -204,6 +209,7 @@
 		0EF3E72916E8603E002F2A96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F1678A817CC0F4400BAD7A9 /* gasp_mikado@2x.png */,
 				4F16786E17CBE8B700BAD7A9 /* Icon-72.png */,
 				4F16786F17CBE8B700BAD7A9 /* Icon-72@2x.png */,
 				4F16787017CBE8B700BAD7A9 /* Icon-Small-50.png */,
@@ -331,6 +337,8 @@
 				4F16788717CBEC3300BAD7A9 /* Default-568h@2x.png in Resources */,
 				4F1678A417CBF66800BAD7A9 /* README.md in Resources */,
 				4F1678A517CBF66800BAD7A9 /* release_notes.md in Resources */,
+				4F1678A917CC0F4400BAD7A9 /* gasp_mikado@2x.png in Resources */,
+				4F1678AB17CC0F7500BAD7A9 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
