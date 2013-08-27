@@ -9,7 +9,7 @@
   // Override point for customization after application launch.
    
   // TestFlight SDK integration
-  //[TestFlight takeOff:@"3b3540c6-1839-4e43-85c7-b54fac7e4b09"];
+  // [TestFlight takeOff:@"3b3540c6-1839-4e43-85c7-b54fac7e4b09"];
     
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -42,11 +42,12 @@
  */
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-    NSLog(@"My token is: %@", deviceToken);
+    // NSLog(@"My token is: %@", deviceToken);
     NSString* tokenAsString = [[[deviceToken description]
                                  stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]]
                                 stringByReplacingOccurrencesOfString:@" " withString:@""];
     [CBViewController registerWithPushServer:tokenAsString];
+    NSLog(@"APN Device Token: %@", tokenAsString);
 
 }
 
@@ -61,7 +62,7 @@
     for (id key in userInfo) {
         NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
     }
-    [CBViewController showMessage:@"Gasp!" message:@"We have news for you..."];
+    [CBViewController showMessage:@"Gasp!" message:@"We have news for you"];
 }
 
 
