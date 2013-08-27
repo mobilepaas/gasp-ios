@@ -12,7 +12,7 @@
 		0E220C0216EDD281004AF57B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72216E8603E002F2A96 /* UIKit.framework */; };
 		0E220C0316EDD281004AF57B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF3E72416E8603E002F2A96 /* Foundation.framework */; };
 		0E220C0916EDD281004AF57B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E220C0716EDD281004AF57B /* InfoPlist.strings */; };
-		0E220C0C16EDD281004AF57B /* ios_clickstartLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */; };
+		0E220C0C16EDD281004AF57B /* gaspLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E220C0B16EDD281004AF57B /* gaspLogicTests.m */; };
 		0E704D0216F15639007A8C3D /* CBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73216E8603E002F2A96 /* CBAppDelegate.m */; };
 		0E704D0416F15639007A8C3D /* CBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF3E73B16E8603E002F2A96 /* CBViewController.m */; };
 		0EC0777116F2F897001F32E5 /* CBNetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EC0777016F2F897001F32E5 /* CBNetworkClient.m */; };
@@ -43,7 +43,7 @@
 			containerPortal = 0EF3E71716E8603E002F2A96 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0EF3E71E16E8603E002F2A96;
-			remoteInfo = "ios-clickstart";
+			remoteInfo = "gasp-clickstart";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,8 +51,8 @@
 		0E220C0016EDD281004AF57B /* gaspLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gaspLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E220C0616EDD281004AF57B /* gaspLogicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "gaspLogicTests-Info.plist"; sourceTree = "<group>"; };
 		0E220C0816EDD281004AF57B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0E220C0A16EDD281004AF57B /* ios_clickstartLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ios_clickstartLogicTests.h; sourceTree = "<group>"; };
-		0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ios_clickstartLogicTests.m; sourceTree = "<group>"; };
+		0E220C0A16EDD281004AF57B /* gaspLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gaspLogicTests.h; sourceTree = "<group>"; };
+		0E220C0B16EDD281004AF57B /* gaspLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gaspLogicTests.m; sourceTree = "<group>"; };
 		0E220C0D16EDD281004AF57B /* gaspLogicTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gaspLogicTests-Prefix.pch"; sourceTree = "<group>"; };
 		0EC0776F16F2F897001F32E5 /* CBNetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBNetworkClient.h; sourceTree = "<group>"; };
 		0EC0777016F2F897001F32E5 /* CBNetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBNetworkClient.m; sourceTree = "<group>"; };
@@ -115,12 +115,11 @@
 		0E220C0416EDD281004AF57B /* gasp-clickstartLogicTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E220C0A16EDD281004AF57B /* ios_clickstartLogicTests.h */,
-				0E220C0B16EDD281004AF57B /* ios_clickstartLogicTests.m */,
+				0E220C0A16EDD281004AF57B /* gaspLogicTests.h */,
+				0E220C0B16EDD281004AF57B /* gaspLogicTests.m */,
 				0E220C0516EDD281004AF57B /* Supporting Files */,
 			);
-			name = "gasp-clickstartLogicTests";
-			path = "ios-clickstartLogicTests";
+			path = "gasp-clickstartLogicTests";
 			sourceTree = "<group>";
 		};
 		0E220C0516EDD281004AF57B /* Supporting Files */ = {
@@ -183,8 +182,7 @@
 				0EF3E72916E8603E002F2A96 /* Supporting Files */,
 				4F16789C17CBF66800BAD7A9 /* TestFlightSDK2.0.0 */,
 			);
-			name = "gasp-clickstart";
-			path = "ios-clickstart";
+			path = "gasp-clickstart";
 			sourceTree = "<group>";
 		};
 		0EF3E72916E8603E002F2A96 /* Supporting Files */ = {
@@ -230,7 +228,7 @@
 				0E704D0016F15631007A8C3D /* PBXTargetDependency */,
 			);
 			name = gaspLogicTests;
-			productName = "ios-clickstartLogicTests";
+			productName = "gasp-clickstartLogicTests";
 			productReference = 0E220C0016EDD281004AF57B /* gaspLogicTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
@@ -247,7 +245,7 @@
 			dependencies = (
 			);
 			name = gasp;
-			productName = "ios-clickstart";
+			productName = "gasp-clickstart";
 			productReference = 0EF3E71F16E8603E002F2A96 /* gasp.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -332,7 +330,7 @@
 				0E08ECFA16F2F92700700E55 /* CBNetworkClient.m in Sources */,
 				0E704D0216F15639007A8C3D /* CBAppDelegate.m in Sources */,
 				0E704D0416F15639007A8C3D /* CBViewController.m in Sources */,
-				0E220C0C16EDD281004AF57B /* ios_clickstartLogicTests.m in Sources */,
+				0E220C0C16EDD281004AF57B /* gaspLogicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +399,8 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ios-clickstartLogicTests/gaspLogicTests-Prefix.pch";
-				INFOPLIST_FILE = "ios-clickstartLogicTests/gaspLogicTests-Info.plist";
+				GCC_PREFIX_HEADER = "gasp-clickstartLogicTests/gaspLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "gasp-clickstartLogicTests/gaspLogicTests-Info.plist";
 				PRODUCT_NAME = gaspLogicTests;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -416,8 +414,8 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ios-clickstartLogicTests/gaspLogicTests-Prefix.pch";
-				INFOPLIST_FILE = "ios-clickstartLogicTests/gaspLogicTests-Info.plist";
+				GCC_PREFIX_HEADER = "gasp-clickstartLogicTests/gaspLogicTests-Prefix.pch";
+				INFOPLIST_FILE = "gasp-clickstartLogicTests/gaspLogicTests-Info.plist";
 				PRODUCT_NAME = gaspLogicTests;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -489,13 +487,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ios-clickstart/gasp-Prefix.pch";
+				GCC_PREFIX_HEADER = "gasp-clickstart/gasp-Prefix.pch";
 				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				INFOPLIST_FILE = "ios-clickstart/gasp-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/gasp-clickstart/gasp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/ios-clickstart/TestFlightSDK2.0.0\"",
+					"\"$(SRCROOT)/gasp-clickstart/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = gasp;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -507,13 +505,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ios-clickstart/gasp-Prefix.pch";
+				GCC_PREFIX_HEADER = "gasp-clickstart/gasp-Prefix.pch";
 				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				INFOPLIST_FILE = "ios-clickstart/gasp-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/gasp-clickstart/gasp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/ios-clickstart/TestFlightSDK2.0.0\"",
+					"\"$(SRCROOT)/gasp-clickstart/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = gasp;
 				RUN_CLANG_STATIC_ANALYZER = YES;
