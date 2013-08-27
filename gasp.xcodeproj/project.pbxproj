@@ -143,6 +143,7 @@
 				4F16787E17CBE91600BAD7A9 /* Icon.png */,
 				0EF3E72816E8603E002F2A96 /* gasp-clickstart */,
 				0E220C0416EDD281004AF57B /* gasp-clickstartLogicTests */,
+				4F16789C17CBF66800BAD7A9 /* TestFlightSDK2.0.0 */,
 				0EF3E72116E8603E002F2A96 /* Frameworks */,
 				0EF3E72016E8603E002F2A96 /* Products */,
 			);
@@ -180,7 +181,6 @@
 				0EC0776F16F2F897001F32E5 /* CBNetworkClient.h */,
 				0EC0777016F2F897001F32E5 /* CBNetworkClient.m */,
 				0EF3E72916E8603E002F2A96 /* Supporting Files */,
-				4F16789C17CBF66800BAD7A9 /* TestFlightSDK2.0.0 */,
 			);
 			path = "gasp-clickstart";
 			sourceTree = "<group>";
@@ -207,7 +207,8 @@
 				4F1678A117CBF66800BAD7A9 /* TestFlight+ManualSessions.h */,
 				4F1678A217CBF66800BAD7A9 /* TestFlight.h */,
 			);
-			path = TestFlightSDK2.0.0;
+			name = TestFlightSDK2.0.0;
+			path = "gasp-clickstart/TestFlightSDK2.0.0";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
