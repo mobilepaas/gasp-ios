@@ -207,8 +207,7 @@
 				4F1678A117CBF66800BAD7A9 /* TestFlight+ManualSessions.h */,
 				4F1678A217CBF66800BAD7A9 /* TestFlight.h */,
 			);
-			name = TestFlightSDK2.0.0;
-			path = "gasp-clickstart/TestFlightSDK2.0.0";
+			path = TestFlightSDK2.0.0;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,7 +493,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/gasp-clickstart/gasp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/gasp-clickstart/TestFlightSDK2.0.0\"",
+					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = gasp;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -512,7 +511,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/gasp-clickstart/gasp-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/gasp-clickstart/TestFlightSDK2.0.0\"",
+					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = gasp;
 				RUN_CLANG_STATIC_ANALYZER = YES;
