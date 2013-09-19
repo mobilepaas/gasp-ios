@@ -10,16 +10,16 @@ Then this is for you!
 > Feel free to fork and use this repo as a template.</i>
 
 CloudBees: 
-    RUN@cloud - a paas to host the mobile backend 
-    WEAVE@cloud - watch for changing data, trigger push messages, sync data
-    Jenkins DEV@cloud - hosted jenkins for building your iOS and mobile backend apps. 
+* RUN@cloud - a paas to host the mobile backend 
+* WEAVE@cloud - watch for changing data, trigger push messages, sync data
+* Jenkins DEV@cloud - hosted jenkins for building your iOS and mobile backend apps. 
 
 This is the gasp-ios client - nothing fancy - using NSURLConnection and friends, registering for push messages - no dependencies. 
 
 
 <img src="https://raw.github.com/mobilepaas/gasp-ios/master/gasp.png">
 
-# To Run this App:
+# To Run and explore this App:
 
 * Clone this repo - open in xcode. Run tests, run the app. 
 * Look in `CBViewController.m` for `HOST` and `PUSH_SERVER` - adjust them to point to a Gasp and Push server of your own if you like. The defaults are the "demo" servers. 
