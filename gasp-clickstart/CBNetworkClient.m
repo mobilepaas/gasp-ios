@@ -1,5 +1,10 @@
 #import "CBNetworkClient.h"
 
+/*
+ * This is the very simple "network client" for the gasp server. It deals with both push registration
+ * and fetching restaurant data from the gasp-server.
+ */
+
 @implementation CBNetworkClient
 
 
@@ -14,9 +19,13 @@
 }
 
 
-/* 
+
+
+/*
  * Talk to the cloudbees push server - tell it that we want to be pushed to - when there is new data.
+ * this is a simple post.
  */
+
 - (NSURLConnection *) registerForPush: (NSString *) host withToken:(NSString *)token {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]
                                     initWithURL:[NSURL
@@ -40,16 +49,27 @@
 }
 
 
+
+/*
+ * search the gasp server (json)
+ */
+
 - (NSDictionary *) performSearch:(NSString *)terms withHost:(NSString *)host {
     NSString *url = [self makeURL: host withPath:[@"search/" stringByAppendingString:[terms stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     NSString *data = [self stringHttpGetContentsAtURL:url];
     return [self parseJSON:data];
 }
 
+
+/*
+ * fetch a (json) list of restaurants
+ */
+
 - (NSArray *) listRestaurants:(NSString *)host {
     NSString *data = [self stringHttpGetContentsAtURL:[self makeURL: host withPath:@"restaurants"]];
     return [self parseJSONList:data];
 }
+
 
 
 - (BOOL) saveDocument:(NSString *)doc withHost:(NSString *)host {    
@@ -60,6 +80,9 @@
 
 
 
+/*
+ * Convert JSON to an array we can use.
+ */
 
 - (NSArray *) parseJSONList:(NSString *)responseString {
     if (responseString == nil) return nil;
@@ -74,7 +97,9 @@
 }
 
 
-
+/*
+ * Convert JSON to Dictionary we can use
+ */
 
 - (NSDictionary *) parseJSON:(NSString *)responseString {
     if (responseString == nil) return nil;
@@ -88,6 +113,10 @@
     }
 }
 
+
+/*
+ * We only need one instance of this network client for the app.
+ */
 
 + (CBNetworkClient *)sharedNetworkClient {
     static dispatch_once_t once;
