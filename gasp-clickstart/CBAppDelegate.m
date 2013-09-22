@@ -18,7 +18,13 @@
     self.viewController = [[CBViewController alloc] initWithNibName:@"CBViewController_iPad" bundle:nil];
   }
   self.window.rootViewController = self.viewController;
+  
+#if TARGET_IPHONE_SIMULATOR
+  NSLog(@"Running on iOS Simulator: push notifications disabled");
+#else
   [self registerForPush];
+#endif
+  
   [self.window makeKeyAndVisible];
   return YES;
 }
